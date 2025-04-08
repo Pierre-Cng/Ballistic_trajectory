@@ -13,7 +13,7 @@ g = 9.81
 class projectile():
     alpha = math.radians(45)
     beta = math.radians(0)
-    v0 = 1000
+    v0 = 1
     h = 0
 
     def alpha_init(self, value_in_degree):
@@ -74,10 +74,10 @@ fig, ax = plt.subplots()
 #plot default data:
 ax.plot(obj.x(t), obj.y(t))
 ax.plot(obj.x(t), [obj.velocity_at_distance(x) for x in obj.x(t)])
-ax.text(10, 0, f'distance = {obj.distance()}, \nduration = {obj.duration()}, \npeak = {obj.peak()}')
-
+ax.text(0, 0, f'distance = {obj.distance()}, \nduration = {obj.duration()}, \npeak = {obj.peak()}')
+'''
 #plot trajectory to reach specified distance:
-targeted_distance = 100000
+targeted_distance = 100
 angle_distance = obj.angle_to_distance(targeted_distance)
 obj.alpha = angle_distance
 ax.plot(obj.x(t), obj.y(t))
@@ -89,7 +89,7 @@ angle_target = obj.angle_to_target(targeted_coordinate[0], targeted_coordinate[1
 obj.alpha = angle_target
 ax.plot(obj.x(t), obj.y(t))
 ax.plot(obj.x(t), [obj.velocity_at_distance(x) for x in obj.x(t)])
-
+'''
 ax.set_ylim(0)
 plt.show()
 
